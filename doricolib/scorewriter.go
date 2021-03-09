@@ -1,0 +1,62 @@
+package doricolib
+
+func CreateDoricoLib(maps []ExpressionMap) *ScoreLib {
+	empty := EntityListContainer{EntityList{IsArray: "true"}}
+	lang := InstrumentNameList{EntityList{IsArray: "true"}, "kEnglish"}
+
+	return &ScoreLib{
+		FileVersion:                 "1.982",
+		Temperaments:                empty,
+		AccidentalSystems:           empty,
+		AccidentalDefinitions:       empty,
+		TonalitySystemDefinitions:   empty,
+		Ensembles:                   empty,
+		Instruments:                 empty,
+		InstrumentNames:             lang,
+		InstrumentFamilies:          empty,
+		ClefDefinitions:             empty,
+		OttavaLineDefinitions:       empty,
+		NoteheadSetDefinitions:      empty,
+		NoteheadDefinitions:         empty,
+		RestSetDefinitions:          empty,
+		RestDefinitions:             empty,
+		FlagSetDefinitions:          empty,
+		FlagDefinitions:             empty,
+		GraphicDefinitions:          empty,
+		BlobDefinitions:             empty,
+		DrawingDefinitions:          empty,
+		TextDefinitions:             empty,
+		GlyphDefinitions:            empty,
+		CompositeDefinitions:        empty,
+		TempoPresetDefinitions:      empty,
+		RhythmicFeelDefinitions:     empty,
+		PenStyles:                   empty,
+		FontStyles:                  empty,
+		BrushStyles:                 empty,
+		PagePairDefinitionSets:      empty,
+		PageDimensionPresets:        empty,
+		ParagraphStyles:             empty,
+		CharacterStyles:             empty,
+		PlayingTechniques:           empty,
+		OrnamentDefinitions:         empty,
+		MultiSegmentLineDefinitions: empty,
+		PlayingTechniqueAppearanceCollectionDefinition: empty,
+		ExpressionMaps: EntityListContainer{
+			Entities: EntityList{
+				IsArray:  "true",
+				Contents: maps,
+			},
+		},
+		DrumKitNoteMapDefinitions:                           empty,
+		RepeatableCompositeCollectionDefinitions:            empty,
+		ChordSymbolAppearanceCollectionDefinitions:          empty,
+		ChordSymbolAppearanceComponentCollectionDefinitions: empty,
+		PercussionKitDefinitionCollectionDefinition:         empty,
+		PercussionInstrumentDataCollectionDefinition:        empty,
+		FrettedInstrumentDataCollectionDefinition:           empty,
+		ChordDiagramCollectionDefinition:                    empty,
+		LineAnnotationCollectionDefinition:                  empty,
+		LineBodyStyleCollectionDefinition:                   empty,
+		LineStyleCollectionDefinition:                       empty,
+	}
+}
