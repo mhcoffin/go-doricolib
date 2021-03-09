@@ -1,3 +1,3 @@
-module github.com/mhcofffin/go-doricolib
+module github.com/mhcoffin/go-doricolib
 
 go 1.15
