@@ -324,4 +324,8 @@ var Techniques = []Technique{
 	{Name: "sf", Id: "pt.sf"},
 	{Name: "sfp", Id: "pt.sfp"},
 	{Name: "sfz", Id: "pt.sfz"},
+
+	// Extra names
+	{Name: "Staccato-tenuto", Id: "pt.portato"},
+
 }
