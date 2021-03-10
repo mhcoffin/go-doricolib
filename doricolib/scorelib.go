@@ -2,8 +2,8 @@ package doricolib
 
 import (
 	"encoding/xml"
+	"fmt"
 	"io"
-	"log"
 )
 
 // Definitions for Dorico's kScoreLibrary
@@ -179,16 +179,17 @@ type AttackType struct {
 	Param1 string `xml:"param1"`
 }
 
-func WriteFile(x interface{}, out io.Writer) {
+// Convert data to XML and write it to 'out'
+func WriteXml(x interface{}, out io.Writer) error {
 	_, err := io.WriteString(out, xml.Header)
 	if err != nil {
-		panic(err)
+		return fmt.Errorf("failed to write XML header: %w", err)
 	}
-
 	encoder := xml.NewEncoder(out)
 	encoder.Indent("", "\t")
 	xmlErr := encoder.Encode(x)
 	if xmlErr != nil {
-		log.Fatal(err)
+		return fmt.Errorf("failed to write XML: %w", xmlErr)
 	}
+	return nil
 }
