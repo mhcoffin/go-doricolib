@@ -193,3 +193,12 @@ func WriteXml(x interface{}, out io.Writer) error {
 	}
 	return nil
 }
+
+func ReadXml(bytes []byte) (*ScoreLib, error) {
+	result := &ScoreLib{}
+	err := xml.Unmarshal(bytes, result)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshall xml: %w", err)
+	}
+	return result, nil
+}
