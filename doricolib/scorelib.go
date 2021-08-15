@@ -109,7 +109,7 @@ type TechniqueAddOn struct {
 }
 
 type MutexGroupList struct {
-	IsArray               string                 `xml:"array,attr"`
+	IsArray               string                  `xml:"array,attr"`
 	MutualExclusionGroups []*MutualExclusionGroup `xml:"mutualExclusionGroup"`
 }
 type MutualExclusionGroup struct {
@@ -119,7 +119,7 @@ type MutualExclusionGroup struct {
 }
 
 type PlayingTechniqueCombinationList struct {
-	IsArray string                        `xml:"array,attr"`
+	IsArray string                         `xml:"array,attr"`
 	Combos  []*PlayingTechniqueCombination `xml:"playingTechniqueCombination"`
 }
 

@@ -1,4 +1,4 @@
- package doricolib
+package doricolib
 
 func CreateDoricoLib(maps []ExpressionMap) *ScoreLib {
 	empty := EntityListContainer{EntityList{IsArray: "true"}}
