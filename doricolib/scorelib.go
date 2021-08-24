@@ -146,11 +146,6 @@ type VolumeType struct {
 	Param1 string `xml:"param1"`
 }
 
-type VolumeType2 struct {
-	Type   string `xml:"type"`
-	Param1 string `xml:"param1"`
-}
-
 type SwitchOnActionList struct {
 	IsArray         string         `xml:"array,attr"`
 	SwitchOnActions []SwitchAction `xml:"switchOnAction"`
