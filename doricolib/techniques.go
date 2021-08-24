@@ -26,7 +26,7 @@ func GetTechniqueByName(name string) *Technique {
 		j := strings.LastIndex(name, "\"")
 		n := name[k+1 : j]
 		return &Technique{
-			Id: fmt.Sprintf("pt.user.%s", n),
+			Id:   fmt.Sprintf("pt.user.%s", n),
 			Name: n,
 		}
 	}
@@ -36,6 +36,29 @@ func GetTechniqueByName(name string) *Technique {
 		panic("aborting")
 	}
 	return &t
+}
+
+var techniquesById = make(map[string]Technique)
+
+func init() {
+	for _, technique := range Techniques {
+		techniquesById[technique.Id] = technique
+	}
+}
+
+func GetTechniqueById(id string) Technique {
+	if strings.HasPrefix(id, "user.") {
+		return Technique{
+			Id:   id,
+			Name: fmt.Sprintf(`Custom: "%s"`, id),
+		}
+	} else {
+		result, ok := techniquesById[id]
+		if !ok {
+			panic(fmt.Sprintf("not a technique ID: %s", id))
+		}
+		return result
+	}
 }
 
 var Techniques = []Technique{
@@ -327,5 +350,4 @@ var Techniques = []Technique{
 
 	// Extra names
 	{Name: "Staccato-tenuto", Id: "pt.portato"},
-
 }
